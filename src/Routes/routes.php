@@ -7,3 +7,4 @@
  */
 
 Route::get('/_eon_authenticate', 'EONConsulting\PHPSaasWrapper\src\Controllers\AuthController@auth');
+Route::get('/_eon_authenticate/callback', 'EONConsulting\PHPSaasWrapper\src\Controllers\AuthController@callback');

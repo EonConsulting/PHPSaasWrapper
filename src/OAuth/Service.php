@@ -11,16 +11,13 @@ namespace EONConsulting\PHPSaasWrapper\src\OAuth;
 
 use Guzzle\Http\Client;
 
-abstract class Service {
+class Service implements ServiceAdapter {
 
     protected $client;
 
-    public function __construct(Client $client) {
+    public function __construct(Client $client = null) {
         $this->client = $client;
     }
-
-    abstract public function getAuthorizeUrl();
-    abstract public function getUserByCode($code);
 
     public function authorizeUrl() {
         return $this->getAuthorizeUrl();
@@ -28,6 +25,18 @@ abstract class Service {
 
     public function getUser($code) {
         return $this->getUserByCode($code);
+    }
+
+    public function getAuthorizeUrl() {
+        return '';
+    }
+
+    public function getUserByCode($code) {
+        return [];
+    }
+
+    public function setClient($client) {
+        $this->client = $client;
     }
 
 }

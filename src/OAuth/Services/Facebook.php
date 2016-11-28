@@ -9,10 +9,12 @@
 namespace EONConsulting\PHPSaasWrapper\src\OAuth\Services;
 
 
-class Facebook {
+use EONConsulting\PHPSaasWrapper\src\OAuth\Service;
+
+class Facebook extends Service {
 
     public function getAuthorizeUrl() {
-        return "https://www.facebook.com/dialog/oauth?client_id=994353767267416&redirect_uri=http://eon.dev/_eon_authenticate&scope=email,public_profile";
+        return "https://www.facebook.com/dialog/oauth?client_id=994353767267416&redirect_uri=http://eon.dev/_eon_authenticate/callback&scope=email,public_profile";
     }
 
     public function getUserByCode($code) {

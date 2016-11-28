@@ -35,6 +35,7 @@ class PHPSaasWrapperServiceProvider extends ServiceProvider {
 //        $this->loadViewsFrom(__DIR__ . '/resources/views', 'phpstencil');
 //        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadRoutesFrom(__DIR__.'/Routes/routes.php');
+        require __DIR__ . '/Routes/routes.php';
     }
 
 }

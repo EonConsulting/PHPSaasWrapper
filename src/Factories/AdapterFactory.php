@@ -9,25 +9,19 @@
 namespace EONConsulting\PHPSaasWrapper\src\Factories;
 
 
+use EONConsulting\PHPSaasWrapper\src\OAuth\OAuthEnum;
+use EONConsulting\PHPSaasWrapper\src\OAuth\Services\Facebook;
+
 class AdapterFactory {
 
     /**
      * @param $config -> Of type CONFIG
      * @return
      */
-    public function make($config) {
-
-        if($config instanceof Config) {
-            switch ($config->get('text.default')) {
-
-            }
-            switch ($config->get('gui.default')) {
-
-            }
-        } else {
-            switch ($config) {
-
-            }
+    public function make(OAuthEnum $config) {
+        switch ($config) {
+            case OAuthEnum::FACEBOOK:
+                return new Facebook;
         }
     }
 

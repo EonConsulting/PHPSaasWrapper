@@ -182,7 +182,7 @@ class OauthPlugin implements EventSubscriberInterface
         ));
 
         // Optional parameters should not be set if they have not been set in the config as
-        // the parameter may be considered invalid by the Oauth service.
+        // the parameter may be considered invalid by the OAuth service.
         $optionalParams = array(
             'callback'  => 'oauth_callback',
             'token'     => 'oauth_token',
@@ -232,7 +232,7 @@ class OauthPlugin implements EventSubscriberInterface
     }
 
     /**
-     * Decide whether the post fields should be added to the base string that Oauth signs.
+     * Decide whether the post fields should be added to the base string that OAuth signs.
      * This implementation is correct. Non-conformant APIs may require that this method be
      * overwritten e.g. the Flickr API incorrectly adds the post fields when the Content-Type
      * is 'application/x-www-form-urlencoded'
