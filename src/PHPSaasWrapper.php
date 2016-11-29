@@ -9,7 +9,6 @@
 namespace EONConsulting\PHPSaasWrapper\src;
 
 
-class PHPSaasWrapper
-{
+class PHPSaasWrapper {
 
 }

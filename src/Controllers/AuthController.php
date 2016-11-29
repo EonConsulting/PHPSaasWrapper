@@ -21,11 +21,11 @@ class AuthController extends Controller {
         $client = new Client;
 
         $factory = new OAuthFactory(new AdapterFactory);
-        $service = $factory->make(OAuthEnum::FACEBOOK);
+        $service = $factory->make(OAuthEnum::UDACITY);
 
         $service->setClient($client);
 
-        return redirect($service->authorizeUrl());
+        return redirect($service->getUserByToken());
     }
 
     public function callback() {

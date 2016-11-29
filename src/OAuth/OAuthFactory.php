@@ -25,7 +25,7 @@ class OAuthFactory implements Factory {
     /**
      * Return a new Text object with the correct adapter
      * @param $config
-     * @return Text
+     * @return Service
      */
     public function make($config) {
         return new Service($this->adapter->make($config));

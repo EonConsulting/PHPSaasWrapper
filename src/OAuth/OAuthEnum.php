@@ -12,5 +12,6 @@ namespace EONConsulting\PHPSaasWrapper\src\OAuth;
 class OAuthEnum {
 
     const FACEBOOK = 'facebook';
+    const UDACITY = 'udacity';
 
 }

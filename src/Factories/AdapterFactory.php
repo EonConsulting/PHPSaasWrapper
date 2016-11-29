@@ -11,6 +11,7 @@ namespace EONConsulting\PHPSaasWrapper\src\Factories;
 
 use EONConsulting\PHPSaasWrapper\src\OAuth\OAuthEnum;
 use EONConsulting\PHPSaasWrapper\src\OAuth\Services\Facebook;
+use EONConsulting\PHPSaasWrapper\src\OAuth\Services\Udacity;
 
 class AdapterFactory {
 
@@ -18,10 +19,12 @@ class AdapterFactory {
      * @param $config -> Of type CONFIG
      * @return
      */
-    public function make(OAuthEnum $config) {
+    public function make($config) {
         switch ($config) {
             case OAuthEnum::FACEBOOK:
                 return new Facebook;
+            case OAuthEnum::UDACITY:
+                return new Udacity;
         }
     }
 

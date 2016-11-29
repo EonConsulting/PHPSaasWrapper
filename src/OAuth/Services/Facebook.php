@@ -28,7 +28,7 @@ class Facebook extends Service {
             'query' => [
                 'client_id' => '994353767267416',
                 'client_secret' => 'b052197806a975a532d520cf0028d8fb',
-                'redirect_uri' => 'http://tutorials.app:8000/socialauth',
+                'redirect_uri' => 'http://eon.dev/_eon_authenticate/callback',
                 'code' => $code,
             ]
         ])->getBody();

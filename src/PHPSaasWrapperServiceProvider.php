@@ -20,7 +20,7 @@ class PHPSaasWrapperServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-//        $this->app->register('');
+
         $this->app->bind( 'phpsaaswrapper', function () {
             return new PHPSaasWrapper;
         });
@@ -34,8 +34,12 @@ class PHPSaasWrapperServiceProvider extends ServiceProvider {
     {
 //        $this->loadViewsFrom(__DIR__ . '/resources/views', 'phpstencil');
 //        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+//        $this->loadRoutesFrom(__DIR__.'/Routes/routes.php');
+        if (!$this->app->routesAreCached()) {
+            require __DIR__ . '/Routes/routes.php';
+        }
+
         $this->loadRoutesFrom(__DIR__.'/Routes/routes.php');
-        require __DIR__ . '/Routes/routes.php';
     }
 
 }
